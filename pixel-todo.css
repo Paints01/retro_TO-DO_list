@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    font-family: 'Press Start 2P', monospace;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+
+    filter: blur(10px);
+
+    z-index: -1;
+
+    transform: scale(1.05);
+}
+
+.music-container{
+    background-color:rgb(243, 219, 176) ;
+    margin-bottom: 10px;
+    border: 4px solid #ff007f;
+    padding: 15px;
+    box-shadow: 5px 5px 0px #000;
+
+}
+
+.music-title{
+    font-family: 'Press Start 2P', monospace;
+    font-size: 25px;
+    text-align: center;
+    color: #ff007f;
+}
+
+.nav-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    background-color: rgb(243, 219, 176);
+    color: #ff007f;
+    border: 4px solid #ff007f;
+    padding: 7px;
+    box-shadow: 4px 4px 0px #000;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background-color: #ff007f;
+    color: rgb(243, 219, 176);
+    border: 4px solid rgb(243, 219, 176);
+}
+
+.nav-btn:active {
+    transform: translateY(2px);
+}
+
+#music-toggle-btn{
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    background-color: rgb(243, 219, 176);
+    color: #ff007f;                        
+    border: 4px solid #ff007f;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 0px #000;
+    cursor: pointer;
+}
+
+#music-toggle-btn:hover{
+    border: 4px solid rgb(243, 219, 176);
+    background-color: #ff007f;
+    color: rgb(243, 219, 176);
+}
+
+#music-toggle-btn:active{
+    transform: translateY(2px);
+}
+
+
+.todo-container{
+    background-color: rgba(243, 219, 176, 0.9);
+    border: 6px solid #ff007f;
+    padding: 30px;
+    width: 400px;
+    box-shadow: 10px 10px 0px #000;
+    color: #fff; 
+}
+
+.todo-title{
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    color: #ff007f; /* Neon retro pink */
+}
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+
+    border: 4px solid rgb(201, 36, 192);
+    background-color: rgb(119, 22, 114);
+
+    max-height: 260px;
+    overflow-y: auto;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+#todo-list::-webkit-scrollbar{
+    width: 16px;
+}
+
+#todo-list::-webkit-scrollbar-track{
+    background-color: rgb(245, 231, 206);
+    border: 4px solid #ff007f;
+}
+
+#todo-list::-webkit-scrollbar-thumb{
+    background-color: #ff007f;
+    border: 2px solid rgb(245, 231, 206);
+}
+
+#todo-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fa52a6;
+    border: 4px solid rgb(243, 152, 238);
+    padding: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    box-shadow: 7px 7px 0px #000;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+#todo-list li span{
+    flex: 1;             /* Forces the text to take up all available space on the left */
+    padding-left: 12px; /* Prevents long task text from touching your check button */
+    word-break: break-word; /* Keeps giant words from breaking outside the card */
+}
+
+.delete-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    background-color: rgb(243, 219, 176);
+    color: #000;
+    border: 4px solid rgb(250, 243, 231);
+    padding: 4px 8px;
+    box-shadow: 5px 5px 0px #000;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #ff3333; /* Turns bright dangerous red on hover */
+    color: #fff;
+}
+
+.delete-btn:active{
+    transform: translateY(2px);
+}
+
+
+.completed{
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+    opacity: 0.4;
+}
+
+.check-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 15px;
+    background-color: rgb(243, 219, 176);
+    color: #000;
+    border: 4px solid rgb(250, 243, 231);
+    padding: 0px 8px;
+    box-shadow: 5px 5px 0px #000;
+    cursor: pointer;
+    margin-right: 12px; /* Puts a tiny gap between the Check and X buttons */
+    font-weight: bold;
+}
+
+.check-btn:hover {
+    background-color: #55ff33; /* Flashes bright arcade green on hover! */
+    color: #000;
+}
+
+.check-btn:active {
+    transform: translateY(2px);
+}
+
+#todo-input {
+    flex: 1;                                  /* 1. Stretches the box to fill space */
+    font-family: 'Press Start 2P', monospace; /* 2. Forces the 8-bit arcade font */
+    font-size: 12px;                          /* 3. Sets the size of your typed text */
+    background-color: rgb(245, 231, 206);                   
+    color: #fa52a6;                              
+    border: 4px solid rgb(255, 190, 153); 
+    padding: 12px;
+    box-shadow: 5px 5px 0px #000;                         
+    outline: none;                            /* 8. Kills the default browser blue glow */
+}
+
+#todo-input::placeholder {
+    color: #fa52a6;                             
+}
+
+#add-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    background-color: rgb(245, 231, 206);
+    color: #000;
+    border: 2px solid rgb(255, 190, 153);
+    padding: 4px 8px;
+    box-shadow: 5px 5px 0px #000;
+    cursor: pointer;
+}
+
+#add-btn:hover {
+    background-color: #55ff33; /* Turns bright dangerous red on hover */
+    color: #fff;
+}
+
+#add-btn:active{
+    transform: translateY(2px);
+}
+
+
