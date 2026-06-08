@@ -43,7 +43,7 @@ Since this application runs entirely on client-side frontend code, it requires z
     <link rel="stylesheet" href="pixel-todo.css">
     <script src="pixel-todo.js"></script>
     ```
-3. Double-click or open `index.html` in any modern web browser to boot up the application.
+3. Double-click or open `pixel-todo.html` in any modern web browser to boot up the application.
 
 ---
 
